@@ -29,3 +29,7 @@
 ### What is CIDR ?
 CIDR stands for Classless Inter-Domain Routing. In simpler terms, a CIDR block is an IP address range
  A VPC can accommodate two CIDR blocks, one for IPv4 and another for IPv6
+ 
+ -  Classless Inter-Domain Routing (CIDR) is a range of IP addresses a network uses.
+ -  A CIDR address looks like a normal IP address, except that it ends with a slash followed by a number.
+ -  The number after the slash represents the number of addresses in the range.
