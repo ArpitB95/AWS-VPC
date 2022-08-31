@@ -202,3 +202,24 @@ CIDR stands for Classless Inter-Domain Routing. In simpler terms, a CIDR block i
 
 
 - Then launch the instance
+
+
+
+## Now ssh into the app ec2
+- create environment variable of db instance into app instance
+- in app instance go to sudo nano .bash.rc
+- create env variable
+- export DB_HOST=mongodb://"private ipv4 of db instance":27017/posts
+
+
+debugging:
+
+ps aux
+sudo kill -9 2246
+keep changing number at the end
+
+if persists try:
+sudo systemctl disable npm.service
+sudo systemctl kill npm.service
+sudo systemctl stop npm.service
+npm start
