@@ -174,10 +174,31 @@ CIDR stands for Classless Inter-Domain Routing. In simpler terms, a CIDR block i
 
 ## Now launch App Ec2 instance and DB EC2 from AMI
 
-## Launch App EC2
+## Launch App EC2 from AMI (eng122-Arpit-App-AMI)
 
 <img width="941" alt="image" src="https://user-images.githubusercontent.com/110182832/187747794-b6f14143-60c8-4dd4-a620-0501f0bf6329.png">
 
 
+- While launching an instance from AMI- on 3rd step 
+- select your VPC that you created
+- select public subnet for your app instance and
+- Auto assigning public ID enable
+
+<img width="933" alt="image" src="https://user-images.githubusercontent.com/110182832/187748468-3ac15bd5-7396-451b-9331-104eaf15d1a9.png">
 
 
+- For security group allow port 22 (my IP), port 3000(for reverse proxy), port 80 (for http requests)
+
+
+## Launch database EC2 from API
+
+- Launch db instance from AMI (eng122-Arpit-DBAMI)
+- Follow the same steps but in security configuration step-6 , assign IPv4 CIDR of private subnet
+
+<img width="624" alt="image" src="https://user-images.githubusercontent.com/110182832/187749642-3292c1f4-c475-4b7a-a24f-ab763a27fced.png">
+
+
+<img width="943" alt="image" src="https://user-images.githubusercontent.com/110182832/187749769-2753d237-5f8d-4b49-9e7b-7f631d7a93c0.png">
+
+
+- Then launch the instance
