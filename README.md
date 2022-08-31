@@ -4,6 +4,27 @@
 ![AWS VPC](https://user-images.githubusercontent.com/110182832/187451639-0f3ffc38-96d3-4bd2-b65d-fcfa8bd2f9b9.png)
 
 
+## Steps for VPC:
+
+- Step-1:In AWS create a VPC with CIDR block (your post code, address on internet) 10.0.0.0/16
+
+- CIDR 10.0.2.0/24 (for me)
+
+
+- Step-2: Internet gateway
+  2.1- add internet gateway to your VPC-name
+
+
+- CIDR 10.0.2.0/24
+- Step-3: create public subnet 
+
+- Step-4: Create route table -
+  4.1:    edit rules to add subnet(public for now)
+  allow in security rules - 0.0.0.0/16
+                            10.0.0.0/16
+
+
+
 
 
 ### What is VPC ?
