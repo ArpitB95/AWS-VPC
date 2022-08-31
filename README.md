@@ -212,10 +212,11 @@ CIDR stands for Classless Inter-Domain Routing. In simpler terms, a CIDR block i
 - export DB_HOST=mongodb://"private ipv4 of db instance":27017/posts
 
 
-debugging:
+debugging npm error:
 
+run
 ps aux
-sudo kill -9 2246
+sudo kill -9 2246 (after -9 give the number of node app.js process)
 keep changing number at the end
 
 if persists try:
