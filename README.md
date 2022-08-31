@@ -33,3 +33,22 @@ CIDR stands for Classless Inter-Domain Routing. In simpler terms, a CIDR block i
  -  Classless Inter-Domain Routing (CIDR) is a range of IP addresses a network uses.
  -  A CIDR address looks like a normal IP address, except that it ends with a slash followed by a number.
  -  The number after the slash represents the number of addresses in the range.
+
+
+### What is NACL ?
+- An optional layer of security that acts as a firewall for controlling traffic in and out of a subnet. You can associate multiple subnets with a single network ACL, but a subnet can be associated with only one network ACL at a time.
+
+
+![image](https://user-images.githubusercontent.com/110182832/187655765-c53afbaf-2cc3-4c4d-9eef-d2f900839edd.png)
+
+
+## NACL VS SG
+- Security Group is applied to an instance only when you specify a security group while launching an instance. NACL has applied automatically to all the instances which are associated with an instance. 
+- It is the first layer of defense.  
+- Security group is the second layer of defense.
+
+## Stateless VS Stateful
+- The key difference between stateful and stateless applications is that stateless applications don't “store” data whereas stateful applications require backing storage. 
+- Stateful applications like the Cassandra, MongoDB and mySQL databases all require some type of persistent storage that will survive service restarts.
+
+![image](https://user-images.githubusercontent.com/110182832/187655612-2d1f2e46-2950-4571-8fb5-0fd9851d3313.png)
