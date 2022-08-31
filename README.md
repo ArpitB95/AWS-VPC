@@ -73,3 +73,111 @@ CIDR stands for Classless Inter-Domain Routing. In simpler terms, a CIDR block i
 - Stateful applications like the Cassandra, MongoDB and mySQL databases all require some type of persistent storage that will survive service restarts.
 
 ![image](https://user-images.githubusercontent.com/110182832/187655612-2d1f2e46-2950-4571-8fb5-0fd9851d3313.png)
+
+
+
+
+## How to setup vpc ?
+
+## Step-1:
+ - In AWS create a VPC with CIDR block (your post code, address on internet) 10.0.0.0/16
+ - Go to VPc and click create vpc and name your vpc
+ - Give IPv4 CIDR 
+ - click on create vpc
+ 
+ <img width="419" alt="image" src="https://user-images.githubusercontent.com/110182832/187741604-7b6639b8-156d-452b-8476-3c3c615aaf96.png">
+
+
+## Step-2
+- Create internet gateway
+
+<img width="425" alt="image" src="https://user-images.githubusercontent.com/110182832/187745438-0948adb2-7246-4460-8bb6-d93f2b291c36.png">
+
+
+## Step-2:
+- create public subnet
+- go to subnet and click create subnet
+
+
+<img width="635" alt="image" src="https://user-images.githubusercontent.com/110182832/187742084-01c68c60-c205-4788-a456-810dcf5e1849.png">
+
+
+
+- select the vpc that you want to create your private/public subnet in (In this case : eng122-Arpit-devops-vpc)
+- Give Ipv4 CIDR block (address of your subnet) (Here it's 10.0.2.0/24)
+- click on create subnet
+
+<img width="375" alt="image" src="https://user-images.githubusercontent.com/110182832/187742688-b3a82453-5096-4e79-a432-92561e1f0f24.png">
+
+
+## Step-3
+- create route table
+
+<img width="441" alt="image" src="https://user-images.githubusercontent.com/110182832/187743900-f58ff17f-bbef-43f6-b615-c3553af83cfe.png">
+
+- Edit routes and allow internet gateway (0.0.0.0/0) and local (10.0.0.0/16)
+- for public subnet, we need to allow requests from the internet and requests from the internet comes through internet gateway
+
+
+<img width="613" alt="image" src="https://user-images.githubusercontent.com/110182832/187744494-a1f8d118-20c2-465c-a988-c44dd9dfd92e.png">
+
+- attach this route table to public subnet that you created
+
+<img width="610" alt="image" src="https://user-images.githubusercontent.com/110182832/187745267-e3c71159-c024-415f-964e-294308e03ba0.png">
+
+
+
+
+- CIDR 10.0.2.0/24 (for me)
+
+
+- Step-2: Internet gateway
+  2.1- add internet gateway to your VPC-name
+
+
+- CIDR 10.0.2.0/24
+- Step-3: create public subnet 
+
+
+- Step-4: Create route table -
+  4.1:    edit rules to add subnet(public for now)
+  allow in security rules - 0.0.0.0/16
+                            10.0.0.0/16
+                            
+                           
+## Create private subnet
+- Give name
+- Select your created VPC
+- Assign IPv4 CIDR block (10.0.13.0/24)
+
+<img width="385" alt="image" src="https://user-images.githubusercontent.com/110182832/187745907-a47db253-ef88-4ab4-a53c-ab30eb1b1773.png">
+
+
+## Create rout table for private subnet
+
+<img width="385" alt="image" src="https://user-images.githubusercontent.com/110182832/187746399-b2f0f466-f74f-481a-a6c0-8c9c2c74acd5.png">
+
+- For private subnet, you need to allow requests from the app only, because database is hosted in the private subnet and database should not be
+  accessed by anyone from the internet.
+ - So for the route rules allow only local (10.0.0.0/16)
+ 
+ <img width="614" alt="image" src="https://user-images.githubusercontent.com/110182832/187746839-5c04c57a-05e1-43fc-a631-2d3a47960f3b.png">
+
+- Attach this route table to private subnet that you created in previous step
+
+<img width="614" alt="image" src="https://user-images.githubusercontent.com/110182832/187747049-d31199c1-3052-4ae1-8373-56901b9c9e1f.png">
+
+
+<img width="497" alt="image" src="https://user-images.githubusercontent.com/110182832/187747434-0df871c1-9ac9-422b-ac85-90eae41f1490.png">
+
+
+
+## Now launch App Ec2 instance and DB EC2 from AMI
+
+## Launch App EC2
+
+<img width="941" alt="image" src="https://user-images.githubusercontent.com/110182832/187747794-b6f14143-60c8-4dd4-a620-0501f0bf6329.png">
+
+
+
+
