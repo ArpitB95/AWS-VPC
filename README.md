@@ -94,7 +94,7 @@ CIDR stands for Classless Inter-Domain Routing. In simpler terms, a CIDR block i
 <img width="425" alt="image" src="https://user-images.githubusercontent.com/110182832/187745438-0948adb2-7246-4460-8bb6-d93f2b291c36.png">
 
 
-## Step-2:
+## Step-3:
 - create public subnet
 - go to subnet and click create subnet
 
@@ -110,7 +110,7 @@ CIDR stands for Classless Inter-Domain Routing. In simpler terms, a CIDR block i
 <img width="375" alt="image" src="https://user-images.githubusercontent.com/110182832/187742688-b3a82453-5096-4e79-a432-92561e1f0f24.png">
 
 
-## Step-3
+## Step-4
 - create route table
 
 <img width="441" alt="image" src="https://user-images.githubusercontent.com/110182832/187743900-f58ff17f-bbef-43f6-b615-c3553af83cfe.png">
@@ -125,24 +125,6 @@ CIDR stands for Classless Inter-Domain Routing. In simpler terms, a CIDR block i
 
 <img width="610" alt="image" src="https://user-images.githubusercontent.com/110182832/187745267-e3c71159-c024-415f-964e-294308e03ba0.png">
 
-
-
-
-- CIDR 10.0.2.0/24 (for me)
-
-
-- Step-2: Internet gateway
-  2.1- add internet gateway to your VPC-name
-
-
-- CIDR 10.0.2.0/24
-- Step-3: create public subnet 
-
-
-- Step-4: Create route table -
-  4.1:    edit rules to add subnet(public for now)
-  allow in security rules - 0.0.0.0/16
-                            10.0.0.0/16
                             
                            
 ## Create private subnet
